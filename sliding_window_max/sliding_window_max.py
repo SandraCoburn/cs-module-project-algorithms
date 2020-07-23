@@ -15,22 +15,20 @@ def sliding_window_max(nums, k):
     allmax = []
     if len(nums) != 0:
         for index,number in enumerate(nums):
-            #stop before getting to end of aray
-            if len(nums) < k:
-                return allmax
-            else:
-                window = nums[index:index+k]
-                print("first window",window)
-                print(index, number)
-                #compare the first k index and move k to next index
-                #have the window stop before array is over
-                window_max = max(window)
-                
-                # print(window_max)
-                print("window max: ", window_max)
-                allmax.append(window_max)
+            #have the window stop before array is over
+            window = nums[index:index+k]
+            print("first window",window)
+            print(index, number)
+            #compare the first k index and move k to next index
+            window_max = max(window)
+
+            print("window max: ", window_max)
+            allmax.append(window_max)
             
-                print("array: ", allmax)
+            print("array: ", allmax)
+            #Make the window sliding stop before end of array
+            if len(nums) < index + (k + 1):
+                return allmax
     return allmax
 
 if __name__ == '__main__':
