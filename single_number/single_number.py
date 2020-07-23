@@ -16,7 +16,21 @@ def single_number(arr):
             duplicate = n
     return duplicate
 
-    
+    #alternate solution:
+    '''
+    s = set() #o(1)
+
+    for x in arr: #O(n)
+    if x in s:
+        s.remove(x) #O(1)
+    else:
+        s.add(x) #O(1)
+    return List(s)[0] #O(1)
+
+    Space complexiyy: measures how memory-usage scales
+    Any data structures that are  passed into a function don't count towards space complexity
+    it only caresa about any additional data structures that are initilized during an algorithm's execution
+    '''
 
 
 if __name__ == '__main__':
